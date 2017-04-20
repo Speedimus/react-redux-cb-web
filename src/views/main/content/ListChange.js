@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { CREATE_CHANGE } from '../../../actions/actions';
 import { connect } from 'react-redux';
+import ComplianceGrid from './complianceGrid/ComplianceGrid'
 
 class ListChange extends Component {
     spaceArray( changes ) {
         return changes.map((change, i) => {
             return (
                 <div key={i} id={`change${i}`} className="change">
-                    {/*<div icons ></div>*/}
+                    <div icons >
+                        <table>
+                            <ComplianceGrid />
+                        </table>
+                    </div>
                     <h4 id="textName">{change.name}</h4>
                     <p id="textBlah">{change.disk_quotamb}</p>
                     <p id="textBlahBlah">{change.memory_quotamb}</p>
